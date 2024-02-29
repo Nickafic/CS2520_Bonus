@@ -16,8 +16,10 @@ from PIL import Image
 
 BeachImage = Image.open('test.jpeg')
 BoatImage = Image.open('boat.jpeg')
+BalloonImage = Image.open('balloon.jpeg')
 copy_image = BeachImage.copy()
-position = ((copy_image.width - BoatImage.width), (copy_image.height - BoatImage.height))
+position = (1000,1000)
 copy_image.paste(BoatImage, position)
+copy_image.paste(BalloonImage, (2000,200))
 copy_image.save('pasted_image.jpeg')
 copy_image.show()
