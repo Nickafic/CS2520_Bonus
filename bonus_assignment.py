@@ -14,5 +14,10 @@ Nick Nguyen contribution: coded the source code
 
 from PIL import Image
 
-myImage = Image.open('test.jpeg')
-myImage.show()
+BeachImage = Image.open('test.jpeg')
+BoatImage = Image.open('boat.jpeg')
+copy_image = BeachImage.copy()
+position = ((copy_image.width - BoatImage.width), (copy_image.height - BoatImage.height))
+copy_image.paste(BoatImage, position)
+copy_image.save('pasted_image.jpeg')
+copy_image.show()
